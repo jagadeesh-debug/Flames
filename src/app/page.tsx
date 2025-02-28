@@ -9,31 +9,30 @@ export default function Flames() {
   function FlameCalculator(): string {
     const freq1: Record<string, number> = {};
     const freq2: Record<string, number> = {};
-  
-    for (let c of name1) freq1[c] = (freq1[c] || 0) + 1;
-    for (let c of name2) freq2[c] = (freq2[c] || 0) + 1;
-  
-    let result = "";
-  
-    for (let c of name1) {
-      if (freq2[c]) freq2[c]--;
-      else result += c;
-    }
-  
-    for (let c of name2) {
-      if (freq1[c]) freq1[c]--;
-      else result += c;
-    }
-  
-    let flames = ["F", "L", "A", "M", "E", "S"];
-    let length = result.length;
 
-  
+    for (const c of name1) freq1[c] = (freq1[c] || 0) + 1;
+    for (const c of name2) freq2[c] = (freq2[c] || 0) + 1;
+
+    let remaining = "";
+
+    for (const c of name1) {
+      if (freq2[c]) freq2[c]--;
+      else remaining += c;
+    }
+
+    for (const c of name2) {
+      if (freq1[c]) freq1[c]--;
+      else remaining += c;
+    }
+
+    const flames = ["F", "L", "A", "M", "E", "S"];
+    let length = remaining.length;
+
     while (flames.length > 1) {
-      let removeIndex = (length - 1) % flames.length;
+      const removeIndex = (length - 1) % flames.length;
       flames.splice(removeIndex, 1);
     }
-  
+
     const resultMap: Record<string, string> = {
       F: "Friends",
       L: "Love",
@@ -42,10 +41,10 @@ export default function Flames() {
       E: "Enemies",
       S: "Siblings",
     };
-  
-    return resultMap[flames[0]];
+
+    return resultMap[flames[0]] || "";
   }
-  
+
   async function handleSubmit() {
     const calculatedResult = FlameCalculator();
     setResult(calculatedResult);
@@ -54,7 +53,7 @@ export default function Flames() {
       const res = await fetch("/API/flamecal", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ username1:name1, username2:name2, result: calculatedResult }),
+        body: JSON.stringify({ username1: name1, username2: name2, result: calculatedResult }),
       });
 
       const data = await res.json();
