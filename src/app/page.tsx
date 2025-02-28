@@ -34,12 +34,12 @@ export default function Flames() {
     }
 
     const resultMap: Record<string, string> = {
-      F: "Friends",
-      L: "Love",
-      A: "Affection",
-      M: "Marriage",
-      E: "Enemies",
-      S: "Siblings",
+      F: "🫂Friends🫂",
+      L: "💕Love💕",
+      A: "😍Affection😍",
+      M: "💍Marriage💍",
+      E: "☠Enemies☠",
+      S: "👥Siblings👥",
     };
 
     return resultMap[flames[0]];
@@ -89,7 +89,7 @@ export default function Flames() {
         </button>
         {result && (
           <p className="text-xl font-medium text-gray-800 text-center">
-             <span className="text-pink-600 font-bold">{result}</span>
+             <span className="text-red-600 font-bold">{result}</span>
           </p>
         )}
       </div>
