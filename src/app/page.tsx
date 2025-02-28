@@ -88,8 +88,8 @@ export default function Flames() {
           Check
         </button>
         {result && (
-          <p className="text-xl font-medium text-gray-800">
-            Result: <span className="text-pink-600 font-bold">{result}</span>
+          <p className="text-xl font-medium text-gray-800 text-center">
+             <span className="text-pink-600 font-bold">{result}</span>
           </p>
         )}
       </div>
