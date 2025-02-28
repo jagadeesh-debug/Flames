@@ -26,7 +26,7 @@ export default function Flames() {
     }
 
     const flames = ["F", "L", "A", "M", "E", "S"];
-    let length = remaining.length;
+    const length = remaining.length;
 
     while (flames.length > 1) {
       const removeIndex = (length - 1) % flames.length;
@@ -42,7 +42,7 @@ export default function Flames() {
       S: "Siblings",
     };
 
-    return resultMap[flames[0]] || "";
+    return resultMap[flames[0]];
   }
 
   async function handleSubmit() {

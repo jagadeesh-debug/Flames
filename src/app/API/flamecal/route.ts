@@ -11,9 +11,9 @@ export async function POST(req: NextRequest) {
     }
 
     const newUser = await User.create({ username1, username2, result });
-
+    
     return NextResponse.json({ message: "Result saved successfully!", data: newUser }, { status: 201 });
   } catch (error) {
-    return NextResponse.json({ error: "Failed to save result" }, { status: 500 });
+    return NextResponse.json({ error}, { status: 500 });
   }
 }
