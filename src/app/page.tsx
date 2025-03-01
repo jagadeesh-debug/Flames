@@ -7,20 +7,23 @@ export default function Flames() {
   const [name2, setName2] = useState<string>("");
 
   function FlameCalculator(): string {
+    const lowerName1 = name1.replace(/\s+/g, "").toLowerCase();
+    const lowerName2 = name2.replace(/\s+/g, "").toLowerCase();
+
     const freq1: Record<string, number> = {};
     const freq2: Record<string, number> = {};
 
-    for (const c of name1) freq1[c] = (freq1[c] || 0) + 1;
-    for (const c of name2) freq2[c] = (freq2[c] || 0) + 1;
+    for (const c of lowerName1) freq1[c] = (freq1[c] || 0) + 1;
+    for (const c of lowerName2) freq2[c] = (freq2[c] || 0) + 1;
 
     let remaining = "";
 
-    for (const c of name1) {
+    for (const c of lowerName1) {
       if (freq2[c]) freq2[c]--;
       else remaining += c;
     }
 
-    for (const c of name2) {
+    for (const c of lowerName2) {
       if (freq1[c]) freq1[c]--;
       else remaining += c;
     }
