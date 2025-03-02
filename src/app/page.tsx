@@ -78,7 +78,7 @@ export default function Flames() {
       <h1 className="text-3xl font-bold text-gray-800 mb-4 drop-shadow-xl">FLAMES</h1>
       <div className="flex flex-col gap-4 w-full max-w-md">
         <input
-          className="rounded-md text-center shadow-md bg-white p-2 border border-gray-300 focus:outline-none focus:ring-2 focus:ring-pink-400"
+          className="rounded-md text-center text-black shadow-md bg-white p-2 border border-gray-300 focus:outline-none focus:ring-2 focus:ring-pink-400"
           type="text"
           placeholder="Your Name"
           value={name1}
@@ -86,7 +86,7 @@ export default function Flames() {
           onChange={(e) => setName1(e.target.value)}
         />
         <input
-          className="rounded-md text-center shadow-md bg-white p-2 border border-gray-300 focus:outline-none focus:ring-2 focus:ring-pink-400"
+          className="rounded-md text-center text-black shadow-md bg-white p-2 border border-gray-300 focus:outline-none focus:ring-2 focus:ring-pink-400"
           type="text"
           placeholder="Your Partner's Name"
           required={true}
