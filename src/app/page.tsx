@@ -95,7 +95,7 @@ export default function Flames() {
         />
         <button
           onClick={handleSubmit}
-          className="w-full bg-pink-500 text-white shadow-md rounded-md py-2 hover:bg-violet-600 transition duration-300 cursor-pointer"
+          className="w-full bg-pink-500 text-white shadow-md rounded-md py-2 hover:bg-violet-600 transition duration-300 cursor-pointer shadow-xl drop-xl"
           disabled={!name1 || !name2}
         >
           Check
