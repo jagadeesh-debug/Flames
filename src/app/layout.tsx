@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
-import Head from 'next/head';
 
 
 const geistSans = Geist({
@@ -16,7 +15,10 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   title: "Flames",
-  description: "check your compatibility with your partner",
+  description: "Check your compatibility with your partner",
+  keywords: ["flame", "flames", "flamess"],
+  authors: [{ name: "Your Name" }],
+  viewport: "width=device-width, initial-scale=1",
 };
 
 export default function RootLayout({
@@ -26,10 +28,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-       <Head>
-        <meta name="description" content="falme your relationsship" />
-        <meta name="keywords" content="flame,flames,falmess" />
-      </Head>
+
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
